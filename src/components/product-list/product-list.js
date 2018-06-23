@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import cart from '../../assets/img/ic_shipping.png';
 import { FormattedNumber } from 'react-intl';
-import ResizeImage from 'react-resize-image';
 import ProductCategories from '../product-categories/product-categories.js';
 import Spinner from '../spinner/spinner.js';
 require('./product-list.scss');
 const parseQueryString = require('query-string');
 const axios = require('axios');
-
 
 class ProductList extends Component {
 
@@ -42,12 +40,12 @@ class ProductList extends Component {
     return items.map((item) => {
       return (<li key={item.id}>
         <div className="product-item-container">
-          <div className="col-1">
+          <div className="product-item_img">
             <Link to={`/items/${item.id}`}>
-              <ResizeImage className="product-thumbnail" src={item.picture} alt={item.title} options={{ width: 180, height: 180 }} />
+              <img className="product-thumbnail" src={item.picture} width={180} height={180} />
             </Link>
           </div>
-          <div className="col-2">
+          <div className="product-item_info">
             <p className="price">
               <FormattedNumber value={item.price.amount} style="currency" currency='USD' />
               {item.freeShipping ? <img src={cart} /> : ''}
@@ -56,7 +54,7 @@ class ProductList extends Component {
               <p className="details">{item.title}</p>
             </Link>
           </div>
-          <div className="col-3">
+          <div className="product-item_location">
             <p>{item.location}</p>
           </div>
         </div>

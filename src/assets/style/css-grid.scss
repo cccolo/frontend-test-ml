@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+}
+
+.col-fit {
+    grid-column: 1 / -1;
+  }
+
+.col-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.col-10 {
+    grid-column: 2 / 12;
+}
+

@@ -36,21 +36,20 @@ router.get('/api/items/:id', (req, res) => {
 });
 
 router.get('/api/items', (req, res) => {
-  const searchPath = `https://api.mercadolibre.com/sites/MLA/search?q=%27${req.query.q}%27`;
+  const searchPath = `https://api.mercadolibre.com/sites/MLA/search?q=%27${req.query.q}%27&limit=4`;
   return axios.get(searchPath)
     .then((response) => {
-      let categoryId = 0;
-      const items = response.data.results.slice(0, 4)
-      const ids = items.map((item) => item.id)
+      const items = response.data.results;
+      const ids = items.map((item) => item.id);
       if (items.length > 0) {
-        categoryId = items[0].category_id
+        const categoryId = items[0].category_id
+        const itemsPath = `https://api.mercadolibre.com/items?ids=${ids.join(',')}`;
+        const categoriesPath = `https://api.mercadolibre.com/categories/${categoryId}`;
+        return axios.all([
+          axios.get(itemsPath),
+          axios.get(categoriesPath)
+        ])
       }
-      const itemsPath = `https://api.mercadolibre.com/items?ids=${ids.join(',')}`;
-      const categoriesPath = `https://api.mercadolibre.com/categories/${categoryId}`;
-      return axios.all([
-        axios.get(itemsPath),
-        axios.get(categoriesPath)
-      ])
     })
     .then(axios.spread((items, categories) => {
       return res.send({
@@ -70,7 +69,7 @@ router.get('/api/items', (req, res) => {
         )),
         categories: categories.data.path_from_root.map((item) => item.name)
       })
-    })).catch((error) => res.send({items: []}));
+    })).catch((error) => res.send({ items: [] }));
 });
 
 app.use('/', router);

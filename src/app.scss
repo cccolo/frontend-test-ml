@@ -1,28 +1,23 @@
+@import 'assets/style/colors.scss';
+@import 'assets/style/css-grid.scss';
 
 :root {
-  background-color: #EEEEEE;
+  background-color: $color-pale-gray;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+.app {
+  background-color: $color-pale-gray;
 
-  .grid-item {
-    padding: 10px;
-    text-align: center;
+  .container {
+
+    .header {
+      background-color: $color-yellow;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .body {
+      text-align: center;
+    }
   }
-
-  .grid-item-all {
-    background-color: #FEE600;
-    grid-column: 1 / -1;
-  }
-
-  .grid-item-10 {
-    grid-column: 2 / 12;
-    padding: 0;
-  }
-}
-
-.App {
-  background-color: #EEEEEE;
 }

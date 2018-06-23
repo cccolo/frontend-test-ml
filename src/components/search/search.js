@@ -43,12 +43,12 @@ class Search extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="search-box-container">
-          <div className="col-1">
-            <a className="logo" onClick={() => this.clearState()} tabIndex="1">
+          <div className="search-box_logo">
+            <a onClick={() => this.clearState()} tabIndex="1">
               <img src={logo} />
             </a>
           </div>
-          <div className="col-2">
+          <div className="search-box_search">
             <input
               value={this.state.searchValue}
               onChange={(e) => this.updateInputValue(e)}

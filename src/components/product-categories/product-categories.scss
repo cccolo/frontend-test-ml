@@ -1,6 +1,8 @@
+@import '../../assets/style/colors.scss';
+
 .product-categories {
     text-align: left;
     font-size: 14px;
-    color: #666666;
+    color: $color-dark-medium-gray;
     margin: 16px 0;
 }

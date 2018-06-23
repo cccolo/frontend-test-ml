@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import ResizeImage from 'react-resize-image'
 import { FormattedNumber } from 'react-intl';
 import ProductCategories from '../product-categories/product-categories.js';
 import Spinner from '../spinner/spinner.js';
 const axios = require('axios');
 require('./product-detail.scss');
-
 
 class ProductDetail extends Component {
 
@@ -30,16 +28,16 @@ class ProductDetail extends Component {
     if (item) {
       return (
         <div className="product-detail-container">
-          <div className="col-1">
-            <ResizeImage src={item.picture} alt={item.title} options={{ width: 680, height: 680 }} />
+          <div className="product-detail_img">
+            <img src={item.picture} width={680} height={680} />
           </div>
-          <div className="col-2">
+          <div className="product-detail_info">
             <span className="sold-items">{item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.soldQuantity} vendidos</span>
             <p className="title">{item.title}</p>
             <p className="price"><FormattedNumber value={item.price.amount} style="currency" currency='USD' /></p>
             <button className="button">Comprar</button>
           </div>
-          <div className="col-3">
+          <div className="product-detail_description">
             <h1>Descripción del producto</h1>
             <p>{item.description}</p>
           </div>

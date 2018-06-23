@@ -10,12 +10,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="container">
-          <div className="grid-item grid-item-all">
+      <div className="app">
+        <div className="grid-container col-12 container">
+          <div className="col-fit grid-item header">
             <Search {...this.props} />
           </div>
-          <div className="grid-item grid-item-10">
+          <div className="col-10 body">
             {this.props.children}
           </div>
         </div>

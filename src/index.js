@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
-import ProductDetail from './components/product-detail/product-detail.js';
-import ProductList from './components/product-list/product-list.js';
+import App from './app';
+import ProductDetail from './components/product-detail/product-detail';
+import ProductList from './components/product-list/product-list';
 import { Route, Switch, HashRouter } from "react-router-dom";
 import { IntlProvider } from "react-intl";
 
