@@ -1,16 +1,15 @@
 {
-  "name": "test-practico-ml-2",
+  "name": "test-practico-ml",
   "version": "1.0.0",
   "description": "Test frontend ML",
-  "main": "index.js",
+  "author": "Jose Luis Alvarez Maroccolo",
+  "main": "src/index.js",
   "scripts": {
     "start:client": "webpack-dev-server --mode development --open --hot --progress --colors --inline",
     "server": "nodemon src/server/server.js",
-    "start": "concurrently --kill-others \"npm run start:client\" \"npm run server\"",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run start:client\"",
     "build": "webpack --mode production"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
@@ -30,11 +29,16 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.2",
     "node-sass": "^4.9.0",
+    "nodemon": "^1.17.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "sass-loader": "^7.0.3",
-    "express": "^4.16.2",
-    "nodemon": "^1.17.5"
+    "react-intl": "^2.4.0",
+    "react-resize-image": "^1.0.4",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "sass-loader": "^7.0.3"
   }
 }

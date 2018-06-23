@@ -1,49 +1,57 @@
-.search-box {
+.search-box-container {
+
+    display: grid;
+    grid-template-columns: 220px auto;
 
     :active, :focus { outline-style: none;}
 
-    .logo {
-        background-image: url(../../assets/img/Logo_ML.png);
-        background-repeat: no-repeat;
-        height: 36px;
-        width: 55px;
-        margin: 5px -20px;
-        position: absolute;
+    .col-1 {
+         text-align: right;
+         padding: 0 20px;
+         .logo {
+            cursor: pointer;
+       }
     }
 
-    .search-input {
-        border: 0 rgba(0,0,0,.2);
-        color: #333;
-        font-size: 16px;
-        border-radius: 2px;
-        width: 75%;
-        height: 30px;
-        padding: 6px 6px 6px 10px;
-        box-shadow: none;
-        font-family: inherit;
-        margin: 0 0 0 60px;
+    .col-2 {
+        text-align: left;
+
+       .search-input {
+           border: 0 rgba(0, 0, 0, 0.2);
+           color: #333;
+           font-size: 16px;
+           border-radius: 3px;
+           width: 89%;
+           height: 30px;
+           padding: 6px 6px 6px 10px;
+           font-family: inherit;
+           box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+       }
+   
+       .search-btn {
+           
+           cursor: pointer;
+           border: 0 rgba(0, 0, 0, 0.2);
+           position: absolute;
+           margin: 0 0 0 -35px;
+           background: 9px 12px url(../../assets/img/ic_Search.png) #EEEEEE;
+           background-repeat: no-repeat;
+           height: 42px;
+           width: 35px;
+           border-radius: 2px;
+           box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+   
+           :before {
+               content: '';
+               display: block;
+               height: 42px;
+               border-left: 1px solid #e6e6e6;
+               position: absolute;
+               top: 0;
+               right: 34px;
+           }
+       }
     }
 
-    .search-btn {
-        
-        cursor: pointer;
-        border: 0 rgba(0, 0, 0, 0.2);
-        position: absolute;
-        margin: 0.5px 0 0 -35px;
-        background: 9px 12px url(../../assets/img/ic_Search.png) #EEEEEE;
-        background-repeat: no-repeat;
-        height: 42px;
-        width: 35px;
-        border-radius: 2px;
-
-        :before {
-            content: '';
-            display: block;
-            height: 42px;
-            border-left: 1px solid #e6e6e6;
-            position: absolute;
-            top: 0;
-            right: 35px;
-        }
-    }
+    
 }

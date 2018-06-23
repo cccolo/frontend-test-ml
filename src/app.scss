@@ -2,55 +2,27 @@
 :root {
   background-color: #EEEEEE;
 }
+
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 15px 10px;
 
   .grid-item {
-   
-    // border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
+    padding: 10px;
     text-align: center;
   }
 
   .grid-item-all {
-     background-color: #FEE600;
+    background-color: #FEE600;
     grid-column: 1 / -1;
   }
 
-  .grid-item-5 {
-    grid-column: 1 / 10;
+  .grid-item-10 {
+    grid-column: 2 / 12;
+    padding: 0;
   }
 }
 
 .App {
   background-color: #EEEEEE;
-  // text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

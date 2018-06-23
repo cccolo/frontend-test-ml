@@ -17,10 +17,6 @@ module.exports = {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.svg$/,
-                loader: "file-loader?name=assets/svg/[hash:20].[ext]"
-            },
-            {
                 test: /\.(png|jpg|gif)$/,
                 use: [
                     {
