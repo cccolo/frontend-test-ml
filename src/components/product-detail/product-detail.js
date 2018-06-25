@@ -29,7 +29,7 @@ class ProductDetail extends Component {
       return (
         <div className="product-detail-container">
           <div className="product-detail_img">
-            <img src={item.picture} width={680} height={680} />
+            <img src={item.picture} />
           </div>
           <div className="product-detail_info">
             <span className="sold-items">{item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.soldQuantity} vendidos</span>

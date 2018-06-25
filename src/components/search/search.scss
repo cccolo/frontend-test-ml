@@ -3,7 +3,7 @@
 .search-box-container {
 
     display: grid;
-    grid-template-columns: 220px auto;
+    grid-template-columns: 190px auto;
 
     :active, :focus { outline-style: none;}
 
@@ -22,7 +22,7 @@
                 color: $color-dark-gray;
                 font-size: 16px;
                 border-radius: 3px;
-                width: calc(100% - 135px);
+                width: 90%;
                 height: 30px;
                 padding: 6px 6px 6px 10px;
                 font-family: inherit;

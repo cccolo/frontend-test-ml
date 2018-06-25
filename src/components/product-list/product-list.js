@@ -42,7 +42,7 @@ class ProductList extends Component {
         <div className="product-item-container">
           <div className="product-item_img">
             <Link to={`/items/${item.id}`}>
-              <img className="product-thumbnail" src={item.picture} width={180} height={180} />
+              <img className="product-thumbnail" src={item.picture} />
             </Link>
           </div>
           <div className="product-item_info">
