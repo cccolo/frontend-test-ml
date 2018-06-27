@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../../assets/img/Logo_ML.png'
-require('./search.scss');
+import logo from '../../assets/img/Logo_ML.png';
+import { withRouter } from 'react-router-dom';
+import './search.scss';
 
 class Search extends Component {
 
@@ -12,31 +13,30 @@ class Search extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  updateInputValue(e) {
+  updateInputValue(event) {
     this.setState({
-      searchValue: e.target.value
+      searchValue: event.target.value
     });
   }
 
-  search({ history }) {
-    const path = `/items?search=${this.state.searchValue}`;
-    history.push(path);
+  search(event) {
+    event.preventDefault();
+    this.props.history.push(`/items?search=${this.state.searchValue}`);
   }
 
   clearState() {
-    window.location.href = '/';
+    this.setState({ searchValue: '' });
+    this.props.history.push('/');
   }
 
-  handleKeyPress(event, props) {
+  handleKeyPress(event) {
     if (event.key === 'Enter') {
-      event.preventDefault();
-      this.search(props);
+      this.search(event);
     }
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    this.search(this.props);
+    this.search(event);
   }
 
   render() {
@@ -52,7 +52,7 @@ class Search extends Component {
             <input
               value={this.state.searchValue}
               onChange={(e) => this.updateInputValue(e)}
-              onKeyPress={(e) => this.handleKeyPress(e, this.props)}
+              onKeyPress={(e) => this.handleKeyPress(e)}
               type="text" className="search-input"
               placeholder="Nunca dejes de buscar"
               maxLength="120" autoFocus=""
@@ -70,4 +70,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);

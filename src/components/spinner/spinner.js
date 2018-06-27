@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-require('./spinner.scss');
+import './spinner.scss';
 
 class Spinner extends Component {
 

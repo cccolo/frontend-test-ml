@@ -1,8 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-require("babel-polyfill");
 
 module.exports = {
-    entry: ["babel-polyfill", "./src/index.js"],
+    entry: './src/index.js',
     module: {
         rules: [
             {
@@ -17,10 +16,10 @@ module.exports = {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|ico)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'file-loader?name=[name].[ext]',
                         options: {}
                     }
                 ]
@@ -30,7 +29,8 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/index.html",
-            filename: "./index.html"
+            filename: "./index.html",
+            favicon: './src/assets/img/favicon.ico'
         })],
     devServer: {
         port: 3000,

@@ -6,6 +6,7 @@
   - npm install
   - npm start (corre la app client y server)
   - Comandos opcionales:
+    * npm run test (corre los test)
     * npm build (genera el build)
     * npm start:client (corre solo el cliente)
     * npm server (corre solo el server)
@@ -16,4 +17,6 @@
   - React-router-dom
   - Sass
   - Css grid
-  - webpack
+  - Webpack
+  - Jest
+  - Enzyme

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { FormattedNumber } from 'react-intl';
-import ProductCategories from '../product-categories/product-categories.js';
-import Spinner from '../spinner/spinner.js';
+import ProductCategories from '../product-categories/product-categories';
+import Spinner from '../spinner/spinner';
+import './product-detail.scss';
 const axios = require('axios');
-require('./product-detail.scss');
+const numeral = require('numeral');
 
 class ProductDetail extends Component {
 
@@ -20,7 +20,7 @@ class ProductDetail extends Component {
 
   getProductDetail() {
     const path = `/api/items/${this.props.match.params.id}`
-    axios.get(path).then(response => this.setState({ response: response.data })).catch(error => console.log(error));
+    axios.get(path).then((response) =>  this.setState({ response: response.data })).catch(error => console.log(error));
   }
 
   renderProductDetail() {
@@ -34,7 +34,7 @@ class ProductDetail extends Component {
           <div className="product-detail_info">
             <span className="sold-items">{item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.soldQuantity} vendidos</span>
             <p className="title">{item.title}</p>
-            <p className="price"><FormattedNumber value={item.price.amount} style="currency" currency='USD' /></p>
+            <p className="price">{numeral(item.price.amount).format('$0,0.00')}</p>
             <button className="button">Comprar</button>
           </div>
           <div className="product-detail_description">

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-require('./product-categories.scss');
+import './product-categories.scss';
 
 class ProductCategories extends Component {
 
-    constructor(props) {
+    constructor() {
         super();
     }
 
