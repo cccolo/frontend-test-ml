@@ -43,13 +43,13 @@ class ProductList extends Component {
 
       return items.map((item) => {
         return (<li key={item.id}>
-          <div className="product-item-container">
-            <div className="product-item_img">
+          <div className="product-list__grid-container">
+            <div className="product-list__grid-container-col-1">
               <Link to={`/items/${item.id}`}>
-                <img className="product-thumbnail" src={item.picture} />
+                <img src={item.picture} />
               </Link>
             </div>
-            <div className="product-item_info">
+            <div className="product-list__grid-container-col-2">
               <p className="price">
                 {numeral(item.price.amount).format('$0,0.00')}
                 {item.freeShipping ? <img src={cart} /> : ''}
@@ -58,7 +58,7 @@ class ProductList extends Component {
                 <p className="details">{item.title}</p>
               </Link>
             </div>
-            <div className="product-item_location">
+            <div className="product-list__grid-container-col-3">
               <p>{item.location}</p>
             </div>
           </div>

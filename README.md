@@ -1,4 +1,4 @@
-# Test técnico frontend - ML
+# Test técnico Front end - Mercado Libre
   - autor: Jose Alvarez Maroccolo
   - e-mail: alvarez.maroccolo@hotmail.com
 
@@ -20,3 +20,4 @@
   - Webpack
   - Jest
   - Enzyme
+  - Axios

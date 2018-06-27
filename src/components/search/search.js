@@ -10,7 +10,6 @@ class Search extends Component {
     this.state = {
       searchValue: ''
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateInputValue(event) {
@@ -35,33 +34,26 @@ class Search extends Component {
     }
   }
 
-  handleSubmit(event) {
-    this.search(event);
-  }
-
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="search-box-container">
-          <div className="search-box_logo">
+      <form onSubmit={(e) => this.search(e)} className="search">
+        <div className="search__grid-container">
+          <div className="search__grid-container-col-1">
             <a onClick={() => this.clearState()} tabIndex="1">
               <img src={logo} />
             </a>
           </div>
-          <div className="search-box_search">
+          <div className="search__grid-container-col-2">
             <input
               value={this.state.searchValue}
               onChange={(e) => this.updateInputValue(e)}
               onKeyPress={(e) => this.handleKeyPress(e)}
-              type="text" className="search-input"
+              type="text" className="input"
               placeholder="Nunca dejes de buscar"
               maxLength="120" autoFocus=""
               spellCheck="false" autoComplete="off" tabIndex="2" />
             <button
-              className="search-btn"
-              type="submit"
-              tabIndex="3">
-              <p className="icon-search"></p>
+              className="button" type="submit" tabIndex="3"><p></p>
             </button>
           </div>
         </div>

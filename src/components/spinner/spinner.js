@@ -3,13 +3,13 @@ import './spinner.scss';
 
 class Spinner extends Component {
 
-  constructor(props) {
+  constructor() {
     super();
   }
 
   render() {
     return (
-        <div className="lds-ripple"><div></div><div></div></div>
+        <div className="spinner"><div></div><div></div></div>
     );
   }
 }

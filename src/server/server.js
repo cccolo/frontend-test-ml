@@ -32,7 +32,7 @@ router.get('/api/items/:id', (req, res) => {
       response.categories = items.data.path_from_root.map((item) => item.name);
       return res.send(response);
     })
-  })).catch((error) => console.log(error));
+  })).catch(() => res.send({ items: [], categories: [] }));
 });
 
 router.get('/api/items', (req, res) => {
@@ -69,7 +69,7 @@ router.get('/api/items', (req, res) => {
         )),
         categories: categories.data.path_from_root.map((item) => item.name)
       })
-    })).catch((error) => res.send({ items: [] }));
+    })).catch(() => res.send({ items: [], categories: [] }));
 });
 
 app.use('/', router);

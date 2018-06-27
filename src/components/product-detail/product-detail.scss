@@ -1,81 +1,84 @@
 @import '../../assets/style/colors.scss';
 
-.product-detail-container {
-    display: grid;
-    grid-template-columns: auto 350px;
-    background: $color-white;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+.product-detail {
 
-    @media screen and (max-width: 1000px) {
-        grid-template-columns: auto;
-    }
+    &__grid-container {
+        display: grid;
+        grid-template-columns: auto 350px;
+        background: $color-white;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
 
-    .product-detail {
-        &_img {
-            margin: 32px 40px;
-            text-align: initial;
-
-            img {
-                border-radius: 4px;
-                max-width: 680px;
-                min-width: 380px;
-                width: 100%;
-            }
+        @media screen and (max-width: 1000px) {
+            grid-template-columns: auto;
         }
 
-        &_info {
-
-            margin: 32px 0;
-            text-align: left;
-
-            @media screen and (max-width: 1000px) {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 24px;
-                padding: 0 32px 0 0;
-                margin: 16px 0;
-            }
-            .price {
-                font-size: 46px;
-                margin: 32px 0;
-            }
-            .sold-items {
-                font-size: 14px;
-            }
-            .button {
-                background-color: $color-blue;
-                border: none;
-                color: $color-white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                border-radius: 4px;
-                width: 90%;
-            }
-        }
-
-        &_description {
-            text-align: left;
-            color: $color-dark-gray;
-            padding: 0 32px 32px;
-            
-            h1 {
-                font-size: 28px;
-                margin: 32px 0;
+        &-row-1 {
+            .col-1 {
+                margin: 32px 40px;
+                text-align: initial;
+    
+                img {
+                    border-radius: 4px;
+                    max-width: 680px;
+                    min-width: 380px;
+                    width: 100%;
+                }
             }
     
-            p {
-                font-size: 16px;
-                color: $color-dark-medium-gray;
-                margin: 0;
+            .col-2 {
+    
+                margin: 32px 0;
+                text-align: left;
+    
+                @media screen and (max-width: 1000px) {
+                    text-align: center;
+                }
+    
+                .title {
+                    font-size: 24px;
+                    padding: 0 32px 0 0;
+                    margin: 16px 0;
+                }
+                .price {
+                    font-size: 46px;
+                    margin: 32px 0;
+                }
+                .sold-items {
+                    font-size: 14px;
+                }
+                .button {
+                    background-color: $color-blue;
+                    border: none;
+                    color: $color-white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    border-radius: 4px;
+                    width: 90%;
+                }
             }
         }
 
+        &-row-2 {
+            .col-1 {
+                text-align: left;
+                color: $color-dark-gray;
+                padding: 0 32px 32px;
+                
+                h1 {
+                    font-size: 28px;
+                    margin: 32px 0;
+                }
+        
+                p {
+                    font-size: 16px;
+                    color: $color-dark-medium-gray;
+                    margin: 0;
+                }
+            }
+        }
     }
-    
 }

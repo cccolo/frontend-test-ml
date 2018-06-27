@@ -11,11 +11,11 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="grid-container col-12 container">
-          <div className="col-fit grid-item header">
+        <div className="app__grid-container">
+          <div className="app__grid-container-header">
             <Search />
           </div>
-          <div className="col-10 body">
+          <div className="app__grid-container-body">
             {this.props.children}
           </div>
         </div>

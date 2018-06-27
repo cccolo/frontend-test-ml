@@ -1,29 +1,29 @@
 @import 'assets/style/colors.scss';
-@import 'assets/style/css-grid.scss';
 
 body {
   margin: 0;
   padding: 0;
   font-family: Helvetica;
-}
-
-
-:root {
   background-color: $color-pale-gray;
 }
 
 .app {
   background-color: $color-pale-gray;
 
-  .container {
+  &__grid-container {
 
-    .header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    
+    &-header {
+      grid-column: 1 / -1;
       background-color: $color-yellow;
       padding: 10px;
       text-align: center;
     }
 
-    .body {
+    &-body {
+      grid-column: 2 / 12;
       text-align: center;
     }
   }

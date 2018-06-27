@@ -27,17 +27,17 @@ class ProductDetail extends Component {
     const { item } = this.state.response;
     if (item) {
       return (
-        <div className="product-detail-container">
-          <div className="product-detail_img">
+        <div className="product-detail__grid-container">
+          <div className="product-detail__grid-container-row-1 col-1">
             <img src={item.picture} />
           </div>
-          <div className="product-detail_info">
+          <div className="product-detail__grid-container-row-1 col-2">
             <span className="sold-items">{item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.soldQuantity} vendidos</span>
             <p className="title">{item.title}</p>
             <p className="price">{numeral(item.price.amount).format('$0,0.00')}</p>
             <button className="button">Comprar</button>
           </div>
-          <div className="product-detail_description">
+          <div className="product-detail__grid-container-row-2 col-1">
             <h1>Descripción del producto</h1>
             <p>{item.description}</p>
           </div>
@@ -48,7 +48,7 @@ class ProductDetail extends Component {
   render() {
     const { response } = this.state;
     return (
-      <div>
+      <div className="product-detail">
         <ProductCategories {...response} />
         {response ? this.renderProductDetail() : <Spinner />}
       </div>
